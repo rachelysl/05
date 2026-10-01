@@ -1,26 +1,26 @@
 #include <stdio.h>
 
-int main(void) 
+int main(void)
 {
-   int num1, num2;
-   char op;
-   int res;
-   
-   printf("Input the calculation:");
-   scanf("%i%c%i", &num1, &op, &num2);
+    int answer = 59;
+    int input;
+    int trial = 0;
 
-    if (op=='+')
-       res = num1 + num2;
-    else if (op=='-')
-       res = num1 - num2;
-    else if (op=='*')
-       res = num1 * num2;
-    else if (op=='/')
-       res = num1 / num2;
+    do
+    {
+        /* code */
+        printf("Guess a number:");
+        scanf("%i", &input);
 
-    printf("=%i\n", res);
+        if (answer < input)
+            printf("high!\n");
+        else if (answer > input)
+            printf("low!\n");
 
+        trial++;
+    } while (answer != input);
+
+    printf("Congratulation! trial:%i\n", trial);
 
     return 0;
 }
-
